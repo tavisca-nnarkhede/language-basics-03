@@ -40,12 +40,12 @@ namespace Tavisca.Bootcamp.LanguageBasics.Exercise3
         }
         public static int[] SelectMeals(int[] protein, int[] carbs, int[] fat, string[] dietPlans)
         {
-            int[] ans = new int[dietPlans.Length];
-            var calorie = new int[protein.Length];
-            int low,high;
+            int[] Answer = new int[dietPlans.Length];
+            var Calorie = new int[protein.Length];
+            int Low,High;
             for (int i=0;i<protein.Length;i++)
             {
-                calorie[i]=(protein[i]+carbs[i])*4+fat[i]*9;
+                Calorie[i]=(protein[i]+carbs[i])*4+fat[i]*9;
             }
             for (int i=0;i<dietPlans.Length;i++)
             {
@@ -56,83 +56,83 @@ namespace Tavisca.Bootcamp.LanguageBasics.Exercise3
                     diet=new List<int>();
                     if (dietPlans[i][j] == 'C')
                     {
-                        high = carbs[index[0]];
+                        High = carbs[index[0]];
                         foreach(int k in index)
-                            if(high < carbs[k])
-                                high = carbs[k];
+                            if(High < carbs[k])
+                                High = carbs[k];
                         foreach(int k in index)
-                            if(high == carbs[k])
+                            if(High == carbs[k])
                                 diet.Add(k);
                     }
                     else if(dietPlans[i][j] == 'P')
                     {
-                        high = protein[index[0]];
+                        High = protein[index[0]];
                         foreach(int k in index)
-                            if(high < protein[k])
-                                high = protein[k];
+                            if(High < protein[k])
+                                High = protein[k];
                         foreach(int k in index)
-                            if(high == protein[k])
+                            if(High == protein[k])
                                 diet.Add(k);
                     }
                     else if(dietPlans[i][j] == 'F')
                     {
-                        high = fat[index[0]];
+                        High = fat[index[0]];
                         foreach(int k in index)
-                            if(high < fat[k])
-                                high = fat[k];
+                            if(High < fat[k])
+                                High = fat[k];
                         foreach(int k in index)
-                            if(high == fat[k])
+                            if(High == fat[k])
                                 diet.Add(k);
                     }
                     else if(dietPlans[i][j] == 'T')
                     {
-                        high = calorie[index[0]];
+                        High = Calorie[index[0]];
                         foreach(int k in index)
-                            if(high < calorie[k])
-                                high = calorie[k];
+                            if(High < Calorie[k])
+                                High = Calorie[k];
                         foreach(int k in index)
-                            if(high == calorie[k])
+                            if(High == Calorie[k])
                                 diet.Add(k);
                     }
                     else if(dietPlans[i][j] == 'c')
                     {
-                        low = carbs[index[0]];
+                        Low = carbs[index[0]];
                         foreach(int k in index)
-                            if(low > carbs[k])
-                                low = carbs[k];
+                            if(Low > carbs[k])
+                                Low = carbs[k];
                         foreach(int k in index)
-                            if(low == carbs[k])
+                            if(Low == carbs[k])
                                 diet.Add(k);
                     }
                     else if(dietPlans[i][j] == 'p')
                     {
-                        low = protein[index[0]];
+                        Low = protein[index[0]];
                         foreach(int k in index)
-                            if(low > protein[k])
-                                low = protein[k];
+                            if(Low > protein[k])
+                                Low = protein[k];
                         foreach(int k in index)
-                            if(low == protein[k])
+                            if(Low == protein[k])
                                 diet.Add(k);
                     }
                     else if(dietPlans[i][j] == 'f')
                     {
-                        low = fat[index[0]];
+                        Low = fat[index[0]];
                         foreach(int k in index)
-                            if(low > fat[k])
-                                low = fat[k];
+                            if(Low > fat[k])
+                                Low = fat[k];
                         foreach(int k in index)
-                            if(low == fat[k])
+                            if(Low == fat[k])
                                 diet.Add(k);
                     }
 
                     else if(dietPlans[i][j] == 't')
                     {
-                        low = calorie[index[0]];
+                        Low = Calorie[index[0]];
                         foreach(int k in index)
-                            if(low > calorie[k])
-                                low = calorie[k];
+                            if(Low > Calorie[k])
+                                Low = Calorie[k];
                         foreach(int k in index)
-                            if(low == calorie[k])
+                            if(Low == Calorie[k])
                                 diet.Add(k);
                     }
                     if(diet.Count == 1)
@@ -140,11 +140,11 @@ namespace Tavisca.Bootcamp.LanguageBasics.Exercise3
                     index = diet;
                 }
                 if(dietPlans[i] == "")
-                    ans[i] = 0;
+                    Answer[i] = 0;
                 else
-                    ans[i] = diet[0];
+                    Answer[i] = diet[0];
             }
-            return ans;
+            return Answer;
         }
     }
 }
